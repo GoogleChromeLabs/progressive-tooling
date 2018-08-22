@@ -20,4 +20,4 @@ A small application that shows a list of community-built, third-party tools that
 
 ## Can I contribute?
 
-Of course you can! Contributions are always welcome. Please take a look at [CONTRIBUTING.md](./CONTRIBUTORS.md).
+Of course you can! Contributions are always welcome. Please take a look at [CONTRIBUTING](./CONTRIBUTING.md).
