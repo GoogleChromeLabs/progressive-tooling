@@ -1,0 +1,34 @@
+{
+	"private": true,
+	"name": "progressive-tooling",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+		"build": "preact build --template src/index.html",
+		"serve": "preact build --template src/index.html && preact serve",
+		"dev": "preact watch --template src/index.html",
+		"lint": "eslint src"
+	},
+	"eslintConfig": {
+		"extends": "eslint-config-synacor"
+	},
+	"eslintIgnore": [
+		"build/*"
+	],
+	"devDependencies": {
+		"babel-plugin-emotion": "^9.1.2",
+		"eslint": "^4.5.0",
+		"eslint-config-synacor": "^1.1.0",
+		"if-env": "^1.0.0",
+		"preact-cli": "^2.0.0",
+		"preact-cli-workbox-plugin": "^1.1.1"
+	},
+	"dependencies": {
+		"emotion": "^9.1.2",
+		"emotion-theming": "^9.1.2",
+		"preact": "^8.2.1",
+		"preact-compat": "^3.17.0",
+		"preact-emotion": "^9.1.2"
+	}
+}

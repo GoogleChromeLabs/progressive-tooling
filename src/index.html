@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		Progressive Tooling
+	</title>
+
+	<meta name="description" content="A curated list of progressive tools to optimize the performance of your web project" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="Progressive Tooling">
+	<meta itemprop="description" content="A curated list of progressive tools to optimize the performance of your web project">
+	<meta itemprop="image" content="https://i.imgur.com/kfedToy.png">
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@hdjirdeh">
+	<meta name="twitter:title" content="Progressive Tooling">
+	<meta name="twitter:description" content="A curated list of progressive tools to optimize the performance of your web project">
+	<meta name="twitter:creator" content="@hdjirdeh">
+	<meta name="twitter:image" content="https://i.imgur.com/kfedToy.png">
+	<meta name="twitter:image:alt" content="A curated list of progressive tools to optimize the performance of your web project">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Progressive Tooling" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://progressivetooling.com/" />
+	<meta property="og:image" content="https://i.imgur.com/kfedToy.png" />
+	<meta property="og:description" content="A curated list of progressive tools to optimize the performance of your web project"
+	/>
+	<meta property="og:site_name" content="Progressive Tooling" />
+	<meta property="fb:admins" content="10202985971279760" />
+
+	<!-- Icons -->
+	<meta name="msapplication-TileColor" content="#8e44ad">
+	<meta name="msapplication-TileImage" content="/assets/icons/mstile-150x150.png">
+	<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#8e44ad">
+
+	<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			background: #FFF;
+			font-family: avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+			font-weight: 400;
+			color: #444;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		#app {
+			width: 100%;
+		}
+	</style>
+	<% for (var chunk of webpack.chunks) { %>
+		<% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
+			<% for (var file of chunk.files) { %>
+				<% if (file.match(/\.(js)$/)) { %>
+					<link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+					<% } else if (file.match(/manifest\.json$/)) { %>
+						<link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+						<% } %>
+							<% } %>
+								<% } %>
+</head>
+
+<body>
+	<%= htmlWebpackPlugin.options.ssr({
+			url: '/'
+		}) %>
+		<script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
+		<script>window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
+
+		<script async src="https://www.google-analytics.com/analytics.js"></script>
+		<script async src="/assets/scripts/analytics.js"></script>
+</body>
+
+</html>
