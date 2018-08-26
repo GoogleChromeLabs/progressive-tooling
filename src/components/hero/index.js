@@ -14,29 +14,4 @@
  * the License.
  */
 
-import styled from 'preact-emotion';
-
-import { forPhoneOnly, growStyle } from 'src/shared';
-
-export const FooterDiv = styled('div')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  background-color: ${props => props.theme.backgroundSecondary};
-  border-top: 1px solid ${props => props.theme.primary};
-
-  ${forPhoneOnly} {
-    height: 70px;
-  }
-`;
-
-export const LinkA = styled('a')`
-  font-size: 16px;
-  font-weight: 600;
-  color: ${props => props.theme.secondary};
-  text-decoration: none;
-  ${growStyle} ${forPhoneOnly} {
-    font-size: 14px;
-  }
-`;
+export { Hero } from './hero.component';

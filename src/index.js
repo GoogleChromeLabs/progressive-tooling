@@ -17,30 +17,39 @@
 import { h, Component } from 'preact';
 import { ThemeProvider } from 'emotion-theming';
 
-import { Header, Section, CardScroll, Footer } from 'src/components';
+import {
+  Header,
+  Hero,
+  SubHero,
+  Section,
+  CardScroll,
+  Footer
+} from 'src/components';
 import { colors } from 'src/core';
 import tools from 'src/tools';
 
 const primaryTheme = {
   name: 'primary',
   primary: colors.black,
-  secondary: colors.purple,
-  tertiary: colors.white,
+  primaryInverse: colors.white,
+  secondary: colors.white,
+  tertiary: colors.purple,
   border: colors.grey2,
   backgroundPrimary: colors.white,
-  backgroundSecondary: colors.grey,
-  logo: colors.purple
+  backgroundSecondary: colors.purple,
+  logo: colors.white
 };
 
 const secondaryTheme = {
   name: 'secondary',
   primary: colors.white,
-  secondary: colors.white,
-  tertiary: colors.purple,
+  primaryInverse: colors.black,
+  secondary: colors.purple,
+  tertiary: colors.white,
   border: colors.white,
   backgroundPrimary: colors.purple,
-  backgroundSecondary: colors.purple,
-  logo: colors.white
+  backgroundSecondary: colors.white,
+  logo: colors.purple
 };
 
 export default class App extends Component {
@@ -105,6 +114,8 @@ export default class App extends Component {
             onListChange={this.onListChange}
             onThemeChange={this.onThemeChange}
           />
+          <Hero />
+          <SubHero />
           {Object.keys(tools).map(toolType =>
             this.renderSection(tools[toolType], theme)
           )}

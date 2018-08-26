@@ -14,29 +14,22 @@
  * the License.
  */
 
-import styled from 'preact-emotion';
+import { h } from 'preact';
 
-import { forPhoneOnly, growStyle } from 'src/shared';
+import { IconWrapper } from './icon-wrapper';
 
-export const FooterDiv = styled('div')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  background-color: ${props => props.theme.backgroundSecondary};
-  border-top: 1px solid ${props => props.theme.primary};
-
-  ${forPhoneOnly} {
-    height: 70px;
-  }
-`;
-
-export const LinkA = styled('a')`
-  font-size: 16px;
-  font-weight: 600;
-  color: ${props => props.theme.secondary};
-  text-decoration: none;
-  ${growStyle} ${forPhoneOnly} {
-    font-size: 14px;
-  }
-`;
+export const CodeSvg = ({
+  size,
+  color = '#000000',
+  backgroundColor = '#FFFFFF'
+}) => (
+  <IconWrapper size={size} viewBox="0 0 24 24">
+    <path fill="none" d="M0 0h24v24H0V0z" />
+    <g>
+      <path
+        fill={color}
+        d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+      />
+    </g>
+  </IconWrapper>
+);

@@ -14,29 +14,14 @@
  * the License.
  */
 
-import styled from 'preact-emotion';
+import { h } from 'preact';
 
-import { forPhoneOnly, growStyle } from 'src/shared';
-
-export const FooterDiv = styled('div')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  background-color: ${props => props.theme.backgroundSecondary};
-  border-top: 1px solid ${props => props.theme.primary};
-
-  ${forPhoneOnly} {
-    height: 70px;
-  }
-`;
-
-export const LinkA = styled('a')`
-  font-size: 16px;
-  font-weight: 600;
-  color: ${props => props.theme.secondary};
-  text-decoration: none;
-  ${growStyle} ${forPhoneOnly} {
-    font-size: 14px;
-  }
-`;
+export const TerminalSvg = ({ size, color = '#000000' }) => (
+  <svg viewBox="0 0 15 20" height="100" width="110">
+    <path
+      fill={color}
+      d="M7 10h4v1H7v-1zm-3 1l3-3-3-3-.75.75L5.5 8l-2.25 2.25L4 11zm10-8v10c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h12c.55 0 1 .45 1 1zm-1 0H1v10h12V3z"
+      fill-rule="evenodd"
+    />
+  </svg>
+);

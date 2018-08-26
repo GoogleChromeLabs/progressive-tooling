@@ -18,17 +18,14 @@ import { h } from 'preact';
 import { withTheme } from 'emotion-theming';
 
 import { Switch } from 'src/components';
-import { LogoSvg, ListSvg } from 'src/icons';
+import { ListSvg } from 'src/icons';
 
 import {
   HeaderDiv,
-  DummyDiv,
-  LogoContainerDiv,
   SwitchContainerDiv,
   ListSwitchControlDiv,
   ChangeColorSwitchControlDiv,
-  ChangeColorsSvgContainer,
-  TitleH1
+  ChangeColorsSvgContainer
 } from './header.style';
 import { ChangeColorsSvg } from '../../icons';
 
@@ -40,11 +37,6 @@ const HeaderComponent = ({
   onThemeChange
 }) => (
   <HeaderDiv>
-    <DummyDiv />
-    <LogoContainerDiv>
-      <LogoSvg color={theme.logo} />
-      <TitleH1>Progressive Tooling</TitleH1>
-    </LogoContainerDiv>
     <SwitchContainerDiv>
       <ListSwitchControlDiv>
         <ListSvg color={theme.logo} />

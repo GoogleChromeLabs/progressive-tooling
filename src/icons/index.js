@@ -14,6 +14,10 @@
  * the License.
  */
 
-export { LogoSvg } from './logo';
-export { ListSvg } from './list';
 export { ChangeColorsSvg } from './change-colors';
+export { CheckSvg } from './check';
+export { CodeSvg } from './code';
+export { LaptopSvg } from './laptop';
+export { ListSvg } from './list';
+export { LogoSvg } from './logo';
+export { TerminalSvg } from './terminal';
