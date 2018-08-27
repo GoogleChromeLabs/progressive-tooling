@@ -15,25 +15,84 @@
  */
 
 import { h } from 'preact';
+import { withTheme } from 'emotion-theming';
 
 import {
   CardContainerDiv,
   CardHeaderDiv,
   TitleA,
   ContentDiv,
-  LinkA
+  LinkA,
+  InfoDiv,
+  InfoIconsDiv,
+  DescriptionDiv,
+  InfoDivLarge
 } from './card.style';
 
-export const Card = ({ title, description, link, fullCard }) => (
+import { CheckSvg, CodeSvg, LaptopSvg, LogoSvg, TerminalSvg } from 'src/icons';
+import TOOL_TYPES from 'src/tools/types';
+
+const getIcons = (type, fullCard, theme) => {
+  const size = fullCard ? 40 : 25;
+  let icons = [];
+  const { web, dep, ci, cli, framework } = TOOL_TYPES;
+
+  if (type.includes(web)) {
+    icons.push(<LaptopSvg size={size} color={theme.tertiary} />);
+  }
+
+  if (type.includes(dep)) {
+    icons.push(<CodeSvg size={size} color={theme.tertiary} />);
+  }
+
+  if (type.includes(ci)) {
+    icons.push(<CheckSvg size={size} color={theme.tertiary} />);
+  }
+
+  if (type.includes(cli)) {
+    icons.push(
+      <TerminalSvg size={size} viewBox={'0 0 15 16'} color={theme.tertiary} />
+    );
+  }
+
+  if (type.includes(framework)) {
+    icons.push(<LogoSvg size={size} color={theme.tertiary} />);
+  }
+
+  return icons;
+};
+
+const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
   <CardContainerDiv fullCard={fullCard}>
-    <CardHeaderDiv extraSpacing={fullCard}>
-      <TitleA large={fullCard} href={link}>
-        {title}
-      </TitleA>
-    </CardHeaderDiv>
-    <ContentDiv large={fullCard}>{description}</ContentDiv>
-    <LinkA show={!fullCard} href={link}>
-      View
-    </LinkA>
+    <DescriptionDiv>
+      <CardHeaderDiv extraSpacing={fullCard}>
+        <TitleA large={fullCard} href={link} target="_blank" rel="noopener">
+          {title}
+        </TitleA>
+      </CardHeaderDiv>
+      <ContentDiv large={fullCard}>{description}</ContentDiv>
+    </DescriptionDiv>
+    {fullCard && (
+      <InfoDivLarge>
+        {getIcons(type, fullCard, theme)}
+        {/* <CheckSvg size={40} color={theme.tertiary} />
+        <CodeSvg size={40} color={theme.tertiary} /> */}
+      </InfoDivLarge>
+    )}
+    {!fullCard && (
+      <InfoDiv>
+        <InfoIconsDiv>
+          {getIcons(type, fullCard, theme)}
+
+          {/* <CheckSvg size={25} color={theme.tertiary} />
+          <CodeSvg size={25} color={theme.tertiary} /> */}
+        </InfoIconsDiv>
+        <LinkA href={link} target="_blank" rel="noopener">
+          View
+        </LinkA>
+      </InfoDiv>
+    )}
   </CardContainerDiv>
 );
+
+export const Card = withTheme(CardComponent);

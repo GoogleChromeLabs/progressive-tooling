@@ -34,12 +34,12 @@ const SubHeroComponent = ({
       <ToolTypeP>Dependency</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
-      <TerminalSvg color={theme.tertiary} />
-      <ToolTypeP>CI</ToolTypeP>
+      <TerminalSvg height={100} width={110} color={theme.tertiary} />
+      <ToolTypeP>CLI</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
       <CheckSvg size={80} color={theme.tertiary} />
-      <ToolTypeP>CLI</ToolTypeP>
+      <ToolTypeP>CI</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
       <LogoSvg size={80} color={theme.tertiary} /> {/* UPDATE */}

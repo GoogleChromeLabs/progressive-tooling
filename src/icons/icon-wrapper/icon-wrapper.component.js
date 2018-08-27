@@ -16,8 +16,8 @@
 
 import { h } from 'preact';
 
-export const IconWrapper = ({ size, children, viewBox }) => (
-  <svg width={size} height={size} preserveAspectRatio="none" viewBox={viewBox}>
+export const IconWrapper = ({ size, height, width, children, viewBox }) => (
+  <svg width={size || width} height={size || height} viewBox={viewBox}>
     {children}
   </svg>
 );

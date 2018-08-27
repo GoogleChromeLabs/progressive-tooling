@@ -39,12 +39,24 @@ export const ContainerDiv = styled('div')`
 
 export const LogoContainerDiv = styled('div')`
   display: flex;
+  flex-direction: column;
   align-items: center;
+
+  &:after {
+    content: '';
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    border-bottom: ${props =>
+      props.theme.name === 'primary'
+        ? `2px solid ${props.theme.borderInverse}`
+        : `5px solid ${props.theme.borderInverse}`};
+  }
 `;
 
 export const TitleH1 = styled('h1')`
   font-size: 42px;
-  margin-left: 15px;
+  margin: 10px 0 20px;
   font-weight: 600;
   color: ${props => props.theme.logo};
 
@@ -55,21 +67,16 @@ export const TitleH1 = styled('h1')`
 `;
 
 export const DescriptionP = styled('p')`
-  margin: 1.5em 0;
   display: block;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   color: ${props => props.theme.primaryInverse};
   line-height: 1.5;
   text-align: center;
-  width: 80%;
+  max-width: 600px;
 
   ${forPhoneOnly} {
     font-size: 16px;
     text-align: center;
-  }
-
-  ${forDesktopUp} {
-    width: 50%;
   }
 `;

@@ -27,12 +27,13 @@ export const CardScroll = ({ tools, horizontalScroll }) => {
 
   return (
     <ContainerComponent numCards={tools.length}>
-      {tools.map(({ title, description, link }) => (
+      {tools.map(({ title, description, link, type }) => (
         <Card
           fullCard={!horizontalScroll}
           title={title}
           description={description}
           link={link}
+          type={type}
         />
       ))}
     </ContainerComponent>

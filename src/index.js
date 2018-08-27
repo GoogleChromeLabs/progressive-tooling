@@ -35,6 +35,7 @@ const primaryTheme = {
   secondary: colors.white,
   tertiary: colors.purple,
   border: colors.grey2,
+  borderInverse: colors.white,
   backgroundPrimary: colors.white,
   backgroundSecondary: colors.purple,
   logo: colors.white
@@ -47,6 +48,7 @@ const secondaryTheme = {
   secondary: colors.purple,
   tertiary: colors.white,
   border: colors.white,
+  borderInverse: colors.grey2,
   backgroundPrimary: colors.purple,
   backgroundSecondary: colors.white,
   logo: colors.purple
