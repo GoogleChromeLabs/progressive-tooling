@@ -20,48 +20,20 @@ import { forPhoneOnly, forTabletPortraitOnly } from 'src/shared';
 
 export const HeaderDiv = styled('div')`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: 70px;
-  background-color: ${props => props.theme.backgroundPrimary};
-  border-bottom: 1px solid ${props => props.theme.border};
+  background-color: ${props => props.theme.backgroundSecondary};
+  border-bottom: 1px solid ${props => props.theme.secondary};
   padding: 0 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
 
   ${forPhoneOnly} {
     height: 65px;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
     padding: 0 20px;
-  }
-`;
-
-export const DummyDiv = styled('div')`
-  width: 246px;
-
-  ${forPhoneOnly} {
-    display: none;
-  }
-
-  ${forTabletPortraitOnly} {
-    display: none;
-  }
-`;
-
-export const LogoContainerDiv = styled('div')`
-  display: flex;
-  align-items: center;
-`;
-
-export const TitleH1 = styled('h1')`
-  font-size: 24px;
-  margin-left: 7px;
-  font-weight: 600;
-  color: ${props => props.theme.logo};
-
-  ${forPhoneOnly} {
-    font-size: 20px;
-    margin-left: 5px;
   }
 `;
 

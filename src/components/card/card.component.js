@@ -15,25 +15,77 @@
  */
 
 import { h } from 'preact';
+import { withTheme } from 'emotion-theming';
 
 import {
   CardContainerDiv,
   CardHeaderDiv,
   TitleA,
   ContentDiv,
-  LinkA
+  LinkA,
+  InfoDiv,
+  InfoIconsDiv,
+  DescriptionDiv,
+  InfoDivLarge
 } from './card.style';
 
-export const Card = ({ title, description, link, fullCard }) => (
+import { CheckSvg, CodeSvg, LaptopSvg, TerminalSvg } from 'src/icons';
+import TOOL_TYPES from 'src/tools/types';
+import { PackageSvg } from '../../icons';
+
+const getIcons = (type, fullCard, theme) => {
+  const size = fullCard ? 40 : 25;
+  let icons = [];
+  const { external, dep, ci, cli, api } = TOOL_TYPES;
+
+  if (type.includes(external)) {
+    icons.push(<LaptopSvg size={size} color={theme.tertiary} />);
+  }
+
+  if (type.includes(dep)) {
+    icons.push(
+      <PackageSvg size={size} viewBox="0 0 1000 900" color={theme.tertiary} />
+    );
+  }
+
+  if (type.includes(ci)) {
+    icons.push(<CheckSvg size={size} color={theme.tertiary} />);
+  }
+
+  if (type.includes(cli)) {
+    icons.push(
+      <TerminalSvg size={size} viewBox="0 0 15 16" color={theme.tertiary} />
+    );
+  }
+
+  if (type.includes(api)) {
+    icons.push(<CodeSvg size={size} color={theme.tertiary} />);
+  }
+
+  return icons;
+};
+
+const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
   <CardContainerDiv fullCard={fullCard}>
-    <CardHeaderDiv extraSpacing={fullCard}>
-      <TitleA large={fullCard} href={link}>
-        {title}
-      </TitleA>
-    </CardHeaderDiv>
-    <ContentDiv large={fullCard}>{description}</ContentDiv>
-    <LinkA show={!fullCard} href={link}>
-      View
-    </LinkA>
+    <DescriptionDiv>
+      <CardHeaderDiv extraSpacing={fullCard}>
+        <TitleA large={fullCard} href={link} target="_blank" rel="noopener">
+          {title}
+        </TitleA>
+      </CardHeaderDiv>
+      {fullCard && <ContentDiv large={fullCard}>{description}</ContentDiv>}
+    </DescriptionDiv>
+    {!fullCard && <ContentDiv large={fullCard}>{description}</ContentDiv>}
+    {fullCard && <InfoDivLarge>{getIcons(type, fullCard, theme)}</InfoDivLarge>}
+    {!fullCard && (
+      <InfoDiv>
+        <InfoIconsDiv>{getIcons(type, fullCard, theme)}</InfoIconsDiv>
+        <LinkA href={link} target="_blank" rel="noopener">
+          View
+        </LinkA>
+      </InfoDiv>
+    )}
   </CardContainerDiv>
 );
+
+export const Card = withTheme(CardComponent);

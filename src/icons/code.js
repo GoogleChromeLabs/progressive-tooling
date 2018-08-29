@@ -16,26 +16,16 @@
 
 import { h } from 'preact';
 
-import { Card } from 'src/components';
+import { IconWrapper } from './icon-wrapper';
 
-import { ScrollContainerDiv, ContainerDiv } from './card-scroll.style';
-
-export const CardScroll = ({ tools, horizontalScroll }) => {
-  const ContainerComponent = horizontalScroll
-    ? ScrollContainerDiv
-    : ContainerDiv;
-
-  return (
-    <ContainerComponent numCards={tools.length}>
-      {tools.map(({ title, description, link, type }) => (
-        <Card
-          fullCard={!horizontalScroll}
-          title={title}
-          description={description}
-          link={link}
-          type={type}
-        />
-      ))}
-    </ContainerComponent>
-  );
-};
+export const CodeSvg = ({ size, color = '#000000' }) => (
+  <IconWrapper size={size} viewBox="0 0 24 24">
+    <path fill="none" d="M0 0h24v24H0V0z" />
+    <g>
+      <path
+        fill={color}
+        d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+      />
+    </g>
+  </IconWrapper>
+);

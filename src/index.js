@@ -17,30 +17,41 @@
 import { h, Component } from 'preact';
 import { ThemeProvider } from 'emotion-theming';
 
-import { Header, Section, CardScroll, Footer } from 'src/components';
+import {
+  Header,
+  Hero,
+  SubHero,
+  Section,
+  CardScroll,
+  Footer
+} from 'src/components';
 import { colors } from 'src/core';
 import tools from 'src/tools';
 
 const primaryTheme = {
   name: 'primary',
   primary: colors.black,
-  secondary: colors.purple,
-  tertiary: colors.white,
+  primaryInverse: colors.white,
+  secondary: colors.white,
+  tertiary: colors.purple,
   border: colors.grey2,
+  borderInverse: colors.white,
   backgroundPrimary: colors.white,
-  backgroundSecondary: colors.grey,
-  logo: colors.purple
+  backgroundSecondary: colors.purple,
+  logo: colors.white
 };
 
 const secondaryTheme = {
   name: 'secondary',
   primary: colors.white,
-  secondary: colors.white,
-  tertiary: colors.purple,
+  primaryInverse: colors.black,
+  secondary: colors.purple,
+  tertiary: colors.white,
   border: colors.white,
+  borderInverse: colors.grey2,
   backgroundPrimary: colors.purple,
-  backgroundSecondary: colors.purple,
-  logo: colors.white
+  backgroundSecondary: colors.white,
+  logo: colors.purple
 };
 
 export default class App extends Component {
@@ -65,12 +76,13 @@ export default class App extends Component {
 
   constructor() {
     super();
+
     if (typeof window !== 'undefined') {
       this.state = {
         theme: localStorage.getItem('theme') || 'primary',
         horizontalScroll: localStorage.getItem('horizontalScroll')
           ? JSON.parse(localStorage.getItem('horizontalScroll'))
-          : true
+          : window.innerWidth < 1200
       };
     } else {
       this.state = {
@@ -105,6 +117,8 @@ export default class App extends Component {
             onListChange={this.onListChange}
             onThemeChange={this.onThemeChange}
           />
+          <Hero />
+          <SubHero />
           {Object.keys(tools).map(toolType =>
             this.renderSection(tools[toolType], theme)
           )}

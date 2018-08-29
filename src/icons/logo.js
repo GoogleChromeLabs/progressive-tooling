@@ -18,8 +18,8 @@ import { h } from 'preact';
 
 import { IconWrapper } from './icon-wrapper';
 
-export const LogoSvg = ({ color = '#000000' }) => (
-  <IconWrapper size={45} viewBox="0 0 24 24">
+export const LogoSvg = ({ size = 45, color = '#000000' }) => (
+  <IconWrapper size={size} viewBox="0 0 24 24">
     <path d="M0 0h24v24H0z" fill="none" />
     <path
       fill={color}

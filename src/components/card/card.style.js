@@ -39,7 +39,10 @@ export const CardContainerDiv = styled('div')`
   min-width: 400px;
   width: 400px;
   position: relative;
-  border: 2px solid ${props => props.theme.secondary};
+  border: 2px solid ${props => props.theme.backgroundSecondary};
+  display: ${props => props.fullCard && 'flex'};
+  justify-content: ${props => props.fullCard && 'space-between'};
+  align-items: ${props => props.fullCard && 'center'};
 
   ${forPhoneOnly} {
     margin: ${props => !props.fullCard && '0 10px'};
@@ -107,6 +110,11 @@ export const CardContainerDiv = styled('div')`
   }
 `;
 
+export const DescriptionDiv = styled('div')`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const CardHeaderDiv = styled('div')`
   align-items: center;
   display: flex;
@@ -123,10 +131,10 @@ export const TitleA = styled('a')`
   font-size: ${props => (props.large ? '24px' : '18px')};
   margin: 0;
   font-weight: 600;
-  color: ${props => props.theme.secondary};
+  color: ${props => props.theme.backgroundSecondary};
   overflow-wrap: break-word;
   text-decoration: none;
-  border-bottom: ${props => `2px solid ${props.theme.secondary}`};
+  border-bottom: ${props => `2px solid ${props.theme.backgroundSecondary}`};
   ${growStyle};
 `;
 
@@ -140,18 +148,47 @@ export const ContentDiv = styled('div')`
   }
 `;
 
+export const InfoDiv = styled('div')`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ${forTabletPortraitUp} {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+  }
+`;
+
+export const InfoIconsDiv = styled('div')`
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 10px;
+  }
+`;
+
+export const InfoDivLarge = styled('div')`
+  svg {
+    margin-left: 15px;
+  }
+`;
+
 export const LinkA = styled('a')`
-  position: absolute;
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.tertiary};
   border: none;
-  color: ${props => props.theme.tertiary};
+  color: ${props => props.theme.secondary};
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 5px;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: ${props => (props.show ? 'inline-block' : 'none')};
+  display: inline-block;
   font-size: 14px;
   bottom: 15px;
   right: 15px;

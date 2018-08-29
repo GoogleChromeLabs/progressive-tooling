@@ -20,7 +20,11 @@ import { FooterDiv, LinkA } from './footer.style';
 
 export const Footer = () => (
   <FooterDiv>
-    <LinkA href="https://github.com/GoogleChromeLabs/progressive-tooling">
+    <LinkA
+      href="https://github.com/GoogleChromeLabs/progressive-tooling"
+      target="_blank"
+      rel="noopener"
+    >
       Show this project some ❤
     </LinkA>
   </FooterDiv>

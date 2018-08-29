@@ -18,5 +18,7 @@ export { Card } from './card';
 export { CardScroll } from './card-scroll';
 export { Switch } from './switch';
 export { Header } from './header';
+export { Hero } from './hero';
+export { SubHero } from './sub-hero';
 export { Footer } from './footer';
 export { Section } from './section';
