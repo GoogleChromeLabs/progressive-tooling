@@ -16,7 +16,12 @@
 
 import styled from 'preact-emotion';
 
-import { containerStyle } from 'src/shared';
+import {
+  containerStyle,
+  forPhoneOnly,
+  forTabletPortraitOnly,
+  forTabletLandscapeOnly
+} from 'src/shared';
 
 export const ContainerDiv = styled('div')`
   background-color: ${props => props.backgroundColor};
@@ -34,20 +39,51 @@ export const ContainerDiv = styled('div')`
         ? `5px solid ${props.theme.border}`
         : `2px solid ${props.theme.border}`};
   }
+
+  ${forPhoneOnly} {
+    display: none;
+  }
 `;
 
 export const ToolTypeDiv = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 150px;
-  width: 130px;
+  justify-content: space-around;
+  min-height: 200px;
+  max-width: 200px;
+
+  ${forTabletPortraitOnly} {
+    min-height: 150px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  ${forTabletLandscapeOnly} {
+    min-height: 175px;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
 `;
 
 export const ToolTypeP = styled('p')`
   color: ${props => props.theme.primary};
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   margin: 0;
+  text-align: center;
+
+  ${forTabletPortraitOnly} {
+    font-size: 16px;
+  }
+
+  ${forTabletLandscapeOnly} {
+    font-size: 18px;
+  }
 `;

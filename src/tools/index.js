@@ -1,6 +1,6 @@
 import TOOL_TYPES from './types';
 
-const { web, dep, ci, cli, framework } = TOOL_TYPES;
+const { external, api, dep, ci, cli, framework } = TOOL_TYPES;
 
 export default {
   accessibility: {
@@ -25,7 +25,7 @@ export default {
         description: 'Color combination contrast tester',
         link: 'https://colorable.jxnblk.com/',
         title: 'Colorable',
-        type: [web]
+        type: [external]
       },
       {
         description: 'Automated accessibility testing using HTML CodeSniffer',
@@ -52,7 +52,7 @@ export default {
           'An automated accessibility testing tool which crawls and tests pages to produce detailed reports',
         link: 'https://github.com/liip/TheA11yMachine',
         title: 'TheA11yMachine',
-        type: [dep]
+        type: [cli]
       }
     ]
   },
@@ -62,73 +62,73 @@ export default {
     tools: [
       {
         description:
-          'Run speed tests on actual devices from multiple locations using different browsers or connection speeds',
+          'Run tests on actual devices with different locations, browsers, and connection speeds',
         link: 'https://www.webpagetest.org/',
         title: 'WebPageTest',
-        type: [dep]
+        type: [external, api]
       },
       {
         description:
           'An open-source auditing tool that you can use to test and improve your webpage',
         link: 'https://developers.google.com/web/tools/lighthouse/',
         title: 'Lighthouse',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'Track and monitor performance of webpages during ongoing development',
         link: 'https://calibreapp.com/',
         title: 'Calibre',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'A devtool for inspecting the performance of React Components',
         link: 'https://github.com/nitin42/react-perf-devtool',
         title: 'React Performance Devtool',
-        type: [dep]
+        type: [external, framework]
       },
       {
         description:
           'Monitor web performance and how real users experience your site',
         link: 'https://speedcurve.com/',
         title: 'Speedcurve',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'Service by Netlify that rates your site based on its initial global load times and its security settings',
         link: 'https://testmysite.io/',
         title: 'Testmysite.io',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'An easy way to measure site performances across devices powered by WebPageTest',
         link: 'https://testmysite.withgoogle.com/',
         title: 'Test My Site',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'Get speed field data and suggestions for optimization improvements',
         link: 'https://developers.google.com/speed/pagespeed/insights/',
         title: 'PageSpeed Insights',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'Compare your mobile site speed with 10 other domains as well as estimate your revenue impact',
         link: 'https://www.thinkwithgoogle.com/feature/mobile/',
         title: 'Speed Scorecard',
-        type: [dep]
+        type: [external]
       },
       {
         description:
           'Generate a node map visualization of all third-party interactions',
         link: 'http://requestmap.webperf.tools/',
         title: 'Request Map Generator',
-        type: [dep]
+        type: [external]
       }
     ]
   },
@@ -140,7 +140,7 @@ export default {
         description: 'Find the cost of adding a npm package to your bundle',
         link: 'https://bundlephobia.com/',
         title: 'Bundlephobia',
-        type: [dep]
+        type: [external]
       },
       {
         description:
@@ -148,7 +148,7 @@ export default {
         link:
           'https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost',
         title: 'Import Cost',
-        type: [dep]
+        type: [external]
       },
       {
         description:
@@ -168,13 +168,13 @@ export default {
         description: 'CLI dashboard for your webpack dev server',
         link: 'https://github.com/FormidableLabs/webpack-dashboard',
         title: 'Webpack Dashboard',
-        type: [dep]
+        type: [cli]
       },
       {
         description: 'Electron Desktop GUI for Webpack Dashboard',
         link: 'https://github.com/FormidableLabs/electron-webpack-dashboard',
         title: 'Electron Webpack Dashboard',
-        type: [dep]
+        type: [cli]
       },
       {
         description: 'An intelligent browser based Webpack dashboard',
@@ -186,20 +186,20 @@ export default {
         description: 'An online visualization tool for webpack bundles',
         link: 'https://chrisbateman.github.io/webpack-visualizer',
         title: 'Webpack Visualizer',
-        type: [dep]
+        type: [external]
       },
       {
         description: 'Analyze and debug code bloat through source maps',
         link: 'https://github.com/danvk/source-map-explorer',
         title: 'Source Map Explorer',
-        type: [dep]
+        type: [cli]
       },
       {
         description:
           'Tool to help you find source code duplication across your javascript chunks/splits',
         link: 'https://github.com/samccone/bundle-buddy',
         title: 'Bundle Buddy',
-        type: [dep]
+        type: [cli]
       },
       {
         description:
@@ -212,7 +212,7 @@ export default {
         description: 'Interactive pie chart for webpack stats',
         link: 'https://github.com/alexkuz/webpack-chart',
         title: 'Webpack Chart',
-        type: [dep]
+        type: [external]
       }
     ]
   },
@@ -221,15 +221,14 @@ export default {
     subtitle: 'Set up budgets to keep your bundle sizes in check',
     tools: [
       {
-        description:
-          'A package that lets you keep an eye on your bundle size through a CI hook',
+        description: 'Keep an eye on your bundle size through a CI hook',
         link: 'https://github.com/siddharthkp/bundlesize',
         title: 'Bundlesize',
-        type: [dep]
+        type: [dep, ci]
       },
       {
         description:
-          'Prevent JS libraries bloat. If you accidentally add a massive dependency, Size Limit will throw an error.',
+          'Prevent library bloat by having error-checks when including large dependencies',
         link: 'https://github.com/ai/size-limit',
         title: 'size-limit',
         type: [dep]
@@ -239,7 +238,7 @@ export default {
           'Automatically track the size of your build artifacts with a CircleCI integration',
         link: 'https://buildsize.org/',
         title: 'BuildSize',
-        type: [dep]
+        type: [ci]
       }
     ]
   },
@@ -248,30 +247,24 @@ export default {
     subtitle: 'Optimize and compress images',
     tools: [
       {
-        description: '2D image processing library with low memory needs',
-        link: 'https://github.com/jcupitt/libvips',
-        title: 'libvips',
-        type: [dep]
-      },
-      {
         description: 'Minify images seamlessly',
         link: 'https://github.com/imagemin/imagemin',
         title: 'ImageMin',
-        type: [dep]
+        type: [dep, cli, external]
       },
       {
         description:
-          "Reduces JPEG image file sizes while retaining quality and compatibility with the majority of the world's deployed decoders",
+          'Reduce JPEG file sizes while retaining quality and compatibility',
         link: 'https://github.com/mozilla/mozjpeg',
         title: 'MozJPEG',
         type: [dep]
       },
       {
         description:
-          'Saves disk space & bandwidth by compressing images without losing quality',
+          'Save disk space & bandwidth by compressing images without losing quality',
         link: 'https://imageoptim.com/api',
         title: 'ImageOptim',
-        type: [dep]
+        type: [api, external]
       }
     ]
   },
@@ -289,37 +282,37 @@ export default {
       },
       {
         description: 'A fast, flexible, and small image lazy loader',
-        link: 'https://github.com/imagemin/imagemin',
+        link: 'https://github.com/malchata/yall.js',
         title: 'yall.js',
         type: [dep]
       },
       {
         description:
-          'High performance and SEO friendly lazy loader for images (responsive and normal), iframes and more',
+          'High performance and SEO friendly lazy loader for images, iframes and more',
         link: 'https://github.com/aFarkas/lazysizes',
         title: 'Lazysizes',
         type: [dep]
       },
       {
         description:
-          'Browser API that provides a way to detect if a DOM element intersects with another element such as the document viewport',
+          'Detect if a DOM element intersects with another element such as the document viewport',
         link:
-          'https://www.w3.org/TR/intersection-observer/#intersection-observer-api',
+          'https://developers.google.com/web/updates/2016/04/intersectionobserver',
         title: 'Intersection Observer',
-        type: [dep]
+        type: [api]
       },
       {
         description:
-          'Parcel provides zero configuration code splitting and lazy loading out of the box',
-        link: 'https://parceljs.org/code_splitting.html',
-        title: 'Parcel lazy loading',
-        type: [dep]
-      },
-      {
-        description:
-          'With entry points or dynamic imports, webpack allows you to split bundles to allow for lazy loading',
+          'Split bundles for lazy loading using entry points or dynamic imports',
         link: 'https://webpack.js.org/guides/code-splitting/',
-        title: 'webpack lazy loading',
+        title: 'webpack',
+        type: [dep]
+      },
+      {
+        description:
+          'Use dynamic imports to split applicatin code into separate bundles',
+        link: 'https://parceljs.org/code_splitting.html',
+        title: 'Parcel',
         type: [dep]
       }
     ]
@@ -330,11 +323,10 @@ export default {
       'Cache static or dynamic assets for offline support using service workers',
     tools: [
       {
-        description:
-          'Set of libraries and node modules that make it easy to cache assets and take full advantage of features used to build PWAs',
+        description: 'Set of tools that simplify process of caching assets',
         link: 'https://developers.google.com/web/tools/workbox/',
         title: 'Workbox',
-        type: [dep]
+        type: [dep, cli]
       },
       {
         description:
@@ -345,17 +337,17 @@ export default {
       },
       {
         description:
-          'A webpack plugin that uses ServiceWorker (and AppCache under the hood) to provide an offline experience',
-        link: 'https://developers.google.com/web/tools/workbox/',
+          'A webpack plugin that uses ServiceWorker (and AppCache) to provide an offline experience',
+        link: 'https://github.com/NekR/offline-plugin',
         title: 'Offline Plugin',
         type: [dep]
       },
       {
         description:
-          'Node module to generate service worker code that will precache specific resources so they work offline',
+          'Node module to generate a ServiceWorker that will precache specific resources',
         link: 'https://github.com/GoogleChromeLabs/sw-precache',
         title: 'Service Worker Precache',
-        type: [dep]
+        type: [dep, cli]
       },
       {
         description:
@@ -367,16 +359,31 @@ export default {
     ]
   },
   fouc: {
-    title: 'Flash of unstyled content (FOUC)',
+    title: 'Flash of invisible/unstyled text',
     subtitle:
-      'Tools to minimize unstyled content rendered to the webpage while external styles are still being fetched',
+      'Tools to minimize unstyled/invisible text rendered to the web page while external styles are still being fetched',
     tools: [
       {
         description:
-          'Helps minimize flash of unstyled text by allowing you to compare between a fallback and an intended font',
+          'Minimize flash of unstyled text by comparing between a fallback and an intended font',
         link: 'https://meowni.ca/font-style-matcher/',
         title: 'Font style matcher',
-        type: [dep]
+        type: [external]
+      },
+      {
+        description:
+          'Track download progress and define lazy loading behavior of font faces',
+        link:
+          'https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api',
+        title: 'CSS Font Loading',
+        type: [api]
+      },
+      {
+        description:
+          'Control how a font is displayed while it is still being fetched',
+        link: 'https://developers.google.com/web/updates/2016/02/font-display',
+        title: 'font-display',
+        type: [api]
       }
     ]
   },
@@ -388,7 +395,7 @@ export default {
         description: 'Universal javascript support for Angular',
         link: 'https://github.com/angular/universal',
         title: 'Angular Universal',
-        type: [dep]
+        type: [cli]
       },
       {
         description:
@@ -402,6 +409,19 @@ export default {
           'React.js server-side rendering optimization with component memoization and templatization',
         link: 'https://github.com/walmartlabs/react-ssr-optimization',
         title: 'react-ssr-optimization',
+        type: [dep]
+      },
+      {
+        description: 'Create a Preact PWA quickly with built-in pre-rendering',
+        link: 'https://github.com/walmartlabs/react-ssr-optimization',
+        title: 'preact-cli',
+        type: [cli]
+      },
+      {
+        description:
+          'Add server-side rendering capabilities to a web server using Headless Chrome',
+        link: 'https://developers.google.com/web/tools/puppeteer/articles/ssr',
+        title: 'Puppeteer',
         type: [dep]
       }
     ]

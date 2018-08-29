@@ -35,8 +35,8 @@ const HeroComponent = ({
       <TitleH1>Progressive Tooling</TitleH1>
     </LogoContainerDiv>
     <DescriptionP>
-      A list of third-party tools to optimize the performance of your web
-      project
+      A list of community-built, third-party tools that can be used to improve
+      page performance
     </DescriptionP>
   </ContainerDiv>
 );

@@ -149,14 +149,18 @@ export const ContentDiv = styled('div')`
 `;
 
 export const InfoDiv = styled('div')`
-  position: absolute;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  ${forTabletPortraitUp} {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+  }
 `;
 
 export const InfoIconsDiv = styled('div')`

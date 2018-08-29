@@ -20,4 +20,5 @@ export { CodeSvg } from './code';
 export { LaptopSvg } from './laptop';
 export { ListSvg } from './list';
 export { LogoSvg } from './logo';
+export { PackageSvg } from './package';
 export { TerminalSvg } from './terminal';

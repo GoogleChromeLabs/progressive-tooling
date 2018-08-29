@@ -1,7 +1,7 @@
 export default {
-  web: 'website',
+  external: 'external',
   dep: 'dependency',
   ci: 'CI',
   cli: 'CLI',
-  framework: 'framework'
+  api: 'api'
 };

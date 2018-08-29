@@ -29,20 +29,23 @@ import {
   InfoDivLarge
 } from './card.style';
 
-import { CheckSvg, CodeSvg, LaptopSvg, LogoSvg, TerminalSvg } from 'src/icons';
+import { CheckSvg, CodeSvg, LaptopSvg, TerminalSvg } from 'src/icons';
 import TOOL_TYPES from 'src/tools/types';
+import { PackageSvg } from '../../icons';
 
 const getIcons = (type, fullCard, theme) => {
   const size = fullCard ? 40 : 25;
   let icons = [];
-  const { web, dep, ci, cli, framework } = TOOL_TYPES;
+  const { external, dep, ci, cli, api } = TOOL_TYPES;
 
-  if (type.includes(web)) {
+  if (type.includes(external)) {
     icons.push(<LaptopSvg size={size} color={theme.tertiary} />);
   }
 
   if (type.includes(dep)) {
-    icons.push(<CodeSvg size={size} color={theme.tertiary} />);
+    icons.push(
+      <PackageSvg size={size} viewBox="0 0 1000 900" color={theme.tertiary} />
+    );
   }
 
   if (type.includes(ci)) {
@@ -51,12 +54,12 @@ const getIcons = (type, fullCard, theme) => {
 
   if (type.includes(cli)) {
     icons.push(
-      <TerminalSvg size={size} viewBox={'0 0 15 16'} color={theme.tertiary} />
+      <TerminalSvg size={size} viewBox="0 0 15 16" color={theme.tertiary} />
     );
   }
 
-  if (type.includes(framework)) {
-    icons.push(<LogoSvg size={size} color={theme.tertiary} />);
+  if (type.includes(api)) {
+    icons.push(<CodeSvg size={size} color={theme.tertiary} />);
   }
 
   return icons;
@@ -70,23 +73,13 @@ const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
           {title}
         </TitleA>
       </CardHeaderDiv>
-      <ContentDiv large={fullCard}>{description}</ContentDiv>
+      {fullCard && <ContentDiv large={fullCard}>{description}</ContentDiv>}
     </DescriptionDiv>
-    {fullCard && (
-      <InfoDivLarge>
-        {getIcons(type, fullCard, theme)}
-        {/* <CheckSvg size={40} color={theme.tertiary} />
-        <CodeSvg size={40} color={theme.tertiary} /> */}
-      </InfoDivLarge>
-    )}
+    {!fullCard && <ContentDiv large={fullCard}>{description}</ContentDiv>}
+    {fullCard && <InfoDivLarge>{getIcons(type, fullCard, theme)}</InfoDivLarge>}
     {!fullCard && (
       <InfoDiv>
-        <InfoIconsDiv>
-          {getIcons(type, fullCard, theme)}
-
-          {/* <CheckSvg size={25} color={theme.tertiary} />
-          <CodeSvg size={25} color={theme.tertiary} /> */}
-        </InfoIconsDiv>
+        <InfoIconsDiv>{getIcons(type, fullCard, theme)}</InfoIconsDiv>
         <LinkA href={link} target="_blank" rel="noopener">
           View
         </LinkA>

@@ -76,12 +76,13 @@ export default class App extends Component {
 
   constructor() {
     super();
+
     if (typeof window !== 'undefined') {
       this.state = {
         theme: localStorage.getItem('theme') || 'primary',
         horizontalScroll: localStorage.getItem('horizontalScroll')
           ? JSON.parse(localStorage.getItem('horizontalScroll'))
-          : true
+          : window.innerWidth < 1200
       };
     } else {
       this.state = {

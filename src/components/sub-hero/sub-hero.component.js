@@ -18,7 +18,13 @@ import { h } from 'preact';
 import { withTheme } from 'emotion-theming';
 
 import { ContainerDiv, ToolTypeDiv, ToolTypeP } from './sub-hero.style';
-import { CheckSvg, CodeSvg, LaptopSvg, LogoSvg, TerminalSvg } from 'src/icons';
+import {
+  CheckSvg,
+  CodeSvg,
+  LaptopSvg,
+  PackageSvg,
+  TerminalSvg
+} from 'src/icons';
 
 const SubHeroComponent = ({
   theme,
@@ -26,15 +32,11 @@ const SubHeroComponent = ({
 }) => (
   <ContainerDiv backgroundColor={backgroundColor}>
     <ToolTypeDiv>
-      <LaptopSvg size={80} color={theme.tertiary} />
-      <ToolTypeP>Website</ToolTypeP>
+      <PackageSvg size={80} viewBox="0 0 1000 900" color={theme.tertiary} />
+      <ToolTypeP>Package</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
-      <CodeSvg size={78} color={theme.tertiary} />
-      <ToolTypeP>Dependency</ToolTypeP>
-    </ToolTypeDiv>
-    <ToolTypeDiv>
-      <TerminalSvg height={100} width={110} color={theme.tertiary} />
+      <TerminalSvg size={80} viewBox="0 0 14 16" color={theme.tertiary} />
       <ToolTypeP>CLI</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
@@ -42,8 +44,16 @@ const SubHeroComponent = ({
       <ToolTypeP>CI</ToolTypeP>
     </ToolTypeDiv>
     <ToolTypeDiv>
-      <LogoSvg size={80} color={theme.tertiary} /> {/* UPDATE */}
-      <ToolTypeP>Framework</ToolTypeP>
+      <CodeSvg size={78} color={theme.tertiary} />
+      <ToolTypeP>
+        API
+        <br />
+        (Web/Server)
+      </ToolTypeP>
+    </ToolTypeDiv>
+    <ToolTypeDiv>
+      <LaptopSvg size={80} color={theme.tertiary} />
+      <ToolTypeP>Website/GUI</ToolTypeP>
     </ToolTypeDiv>
   </ContainerDiv>
 );

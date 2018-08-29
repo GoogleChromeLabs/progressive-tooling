@@ -16,7 +16,7 @@
 
 import styled from 'preact-emotion';
 
-import { forPhoneOnly, forDesktopUp, containerStyle } from 'src/shared';
+import { forPhoneOnly, containerStyle } from 'src/shared';
 
 export const ContainerDiv = styled('div')`
   background-color: ${props => props.theme.backgroundSecondary};
@@ -24,7 +24,7 @@ export const ContainerDiv = styled('div')`
     props.theme.name === 'primary'
       ? `5px solid ${props.theme.border}`
       : `2px solid ${props.theme.border}`};
-  height: 700px;
+  height: 70vh;
   margin-top: 70px;
   display: flex;
   flex-direction: column;
