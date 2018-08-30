@@ -265,6 +265,13 @@ export default {
         link: 'https://imageoptim.com/api',
         title: 'ImageOptim',
         type: [api, external]
+      },
+      {
+        description:
+          'A GUI tool for losslessly optimizing PNG and JPG files',
+        link: 'https://trimage.org/',
+        title: 'Trimage',
+        type: [cli, external]
       }
     ]
   },
