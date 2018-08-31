@@ -132,7 +132,7 @@ export default {
       },
       {
         description:
-          'Linting tool that will help your site with accessibility, speed, security and more, by checking your code for best practices and common errors',
+          'Linting tool that can help improve accessibility, speed and more by checking for best practices',
         link: 'https://webhint.io/',
         title: 'webhint',
         type: [external, cli]
