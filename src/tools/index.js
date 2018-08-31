@@ -136,6 +136,12 @@ export default {
         link: 'https://webhint.io/',
         title: 'webhint',
         type: [external, cli]
+      },
+      {
+        description: 'Progressive web metrics at your fingertipz',
+        link: 'https://github.com/paulirish/pwmetrics',
+        title: 'PWMetrics',
+        type: [cli, ci]
       }
     ]
   },
