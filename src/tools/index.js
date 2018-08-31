@@ -129,6 +129,13 @@ export default {
         link: 'http://requestmap.webperf.tools/',
         title: 'Request Map Generator',
         type: [external]
+      },
+      {
+        description:
+          'Linting tool that can help improve accessibility, speed and more by checking for best practices',
+        link: 'https://webhint.io/',
+        title: 'webhint',
+        type: [external, cli]
       }
     ]
   },
