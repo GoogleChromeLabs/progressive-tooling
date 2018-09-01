@@ -104,7 +104,7 @@ export default {
       },
       {
         description:
-          'An easy way to measure site performances across devices powered by WebPageTest',
+          'An easy way to measure site performance across devices powered by WebPageTest',
         link: 'https://testmysite.withgoogle.com/',
         title: 'Test My Site',
         type: [external]
@@ -190,7 +190,7 @@ export default {
         type: [cli]
       },
       {
-        description: 'An intelligent browser based Webpack dashboard',
+        description: 'An intelligent browser-based Webpack dashboard',
         link: 'https://github.com/zouhir/jarvis',
         title: 'Jarvis',
         type: [dep]
@@ -241,7 +241,7 @@ export default {
       },
       {
         description:
-          'Prevent library bloat by having error-checks when including large dependencies',
+          'Prevent library bloat by having error checks when including large dependencies',
         link: 'https://github.com/ai/size-limit',
         title: 'size-limit',
         type: [dep]
@@ -330,7 +330,7 @@ export default {
       },
       {
         description:
-          'Use dynamic imports to split applicatin code into separate bundles',
+          'Use dynamic imports to split application code into separate bundles',
         link: 'https://parceljs.org/code_splitting.html',
         title: 'Parcel',
         type: [dep]
