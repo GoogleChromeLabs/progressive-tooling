@@ -114,7 +114,7 @@ export default {
           'Get speed field data and suggestions for optimization improvements',
         link: 'https://developers.google.com/speed/pagespeed/insights/',
         title: 'PageSpeed Insights',
-        type: [external]
+        type: [external, api]
       },
       {
         description:
@@ -142,6 +142,24 @@ export default {
         link: 'https://github.com/paulirish/pwmetrics',
         title: 'PWMetrics',
         type: [cli, ci]
+      },
+      {
+        description: 'Progressive web metrics at your fingertipz',
+        link: 'https://github.com/paulirish/pwmetrics',
+        title: 'PWMetrics',
+        type: [cli, ci]
+      },
+      {
+        description: 'Progressive web metrics at your fingertipz',
+        link: 'https://github.com/paulirish/pwmetrics',
+        title: 'PWMetrics',
+        type: [cli, ci]
+      },
+      {
+        description: 'Google PageSpeed Reports sent directly to your inbox every week',
+        link: 'https://pagespeedreports.proteusthemes.com/',
+        title: 'PageSpeed Reports',
+        type: [external]
       }
     ]
   },
