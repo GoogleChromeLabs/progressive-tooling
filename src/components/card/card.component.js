@@ -38,6 +38,8 @@ import {
   TerminalSvg
 } from 'src/icons';
 
+import { Tooltip } from '../tooltip';
+
 const ICONS = {
   api: CodeSvg,
   CI: CheckSvg,
@@ -53,18 +55,19 @@ const ICON_VIEW_BOX = {
 };
 
 const getIcons = ({ type, path, theme, fullCard }) =>
-  type.map(({ key, path, title }) =>
-    createElement(
-      ICONS[path],
-      {
-        key,
-        viewBox: ICON_VIEW_BOX[path],
-        size: fullCard ? 40 : 25,
-        color: theme
-      },
-      null
-    )
-  );
+  type.map(({ key, path, title }) => (
+    <Tooltip key={key} title={title}>
+      {createElement(
+        ICONS[path],
+        {
+          viewBox: ICON_VIEW_BOX[path],
+          size: fullCard ? 40 : 25,
+          color: theme
+        },
+        null
+      )}
+    </Tooltip>
+  ));
 
 const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
   <CardContainerDiv fullCard={fullCard}>
