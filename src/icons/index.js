@@ -17,6 +17,7 @@
 export { ChangeColorsSvg } from './change-colors';
 export { CheckSvg } from './check';
 export { CodeSvg } from './code';
+export { FrameworkSvg } from './framework';
 export { LaptopSvg } from './laptop';
 export { ListSvg } from './list';
 export { LogoSvg } from './logo';
