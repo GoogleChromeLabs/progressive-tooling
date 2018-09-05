@@ -1,6 +1,7 @@
-import { h, Component } from 'preact';
+import { h, Component } from "preact";
+import { withTheme } from "emotion-theming";
 
-import { TooltipWrapper, TooltipSpan } from './tooltip.style';
+import { TooltipWrapper, TooltipSpan } from "./tooltip.style";
 
 export class Tooltip extends Component {
   state = {
@@ -12,7 +13,7 @@ export class Tooltip extends Component {
   };
 
   render() {
-    const { children, title } = this.props;
+    const { children, title, pointing = "top left" } = this.props;
     const { open } = this.state;
 
     return (
@@ -20,7 +21,7 @@ export class Tooltip extends Component {
         onMouseEnter={this.toggleMouse}
         onMouseLeave={this.toggleMouse}
       >
-        {open && <TooltipSpan>{title}</TooltipSpan>}
+        {open && <TooltipSpan pointing={pointing}>{title}</TooltipSpan>}
         {children}
       </TooltipWrapper>
     );

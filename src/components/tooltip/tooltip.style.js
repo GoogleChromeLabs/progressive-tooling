@@ -1,4 +1,4 @@
-import styled from 'preact-emotion';
+import styled, { css } from 'preact-emotion';
 
 export const TooltipWrapper = styled('div')`
   position: relative;
@@ -10,9 +10,35 @@ export const TooltipSpan = styled('span')`
   color: #fff;
   font-size: 12px;
   font-weight: bold;
-  left: 0;
   padding: 6px 12px;
   position: absolute;
-  top: -30px;
   width: max-content;
+
+  ${({ pointing }) =>
+    pointing === 'top left' &&
+    css`
+      top: -30px;
+      right: 0;
+    `}
+
+  ${({ pointing }) =>
+    pointing === 'top right' &&
+    css`
+      top: -30px;
+      left: 0;
+    `}
+
+  ${({ pointing }) =>
+    pointing === 'bottom left' &&
+    css`
+      bottom: -30px;
+      right: 0;
+    `}
+
+  ${({ pointing }) =>
+    pointing === 'bottom right' &&
+    css`
+      bottom: -30px;
+      left: 0;
+    `}
 `;
