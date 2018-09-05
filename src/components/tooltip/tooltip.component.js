@@ -1,5 +1,4 @@
 import { h, Component } from "preact";
-import { withTheme } from "emotion-theming";
 
 import { TooltipWrapper, TooltipSpan } from "./tooltip.style";
 
