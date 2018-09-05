@@ -422,6 +422,12 @@ export default {
         link: 'https://developers.google.com/web/updates/2016/02/font-display',
         title: 'font-display',
         type: [api]
+      },
+      {
+        description: 'A fast and simple web font loader',
+        link: 'https://fontfaceobserver.com/',
+        title: 'Font Face Observer',
+        type: [dep]
       }
     ]
   },
