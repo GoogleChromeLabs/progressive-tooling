@@ -445,7 +445,7 @@ export default {
       },
       {
         description: 'Create a Preact PWA quickly with built-in pre-rendering',
-        link: 'https://github.com/walmartlabs/react-ssr-optimization',
+        link: 'https://github.com/developit/preact-cli',
         title: 'preact-cli',
         type: [cli]
       },
