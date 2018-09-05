@@ -144,18 +144,6 @@ export default {
         type: [cli, ci]
       },
       {
-        description: 'Progressive web metrics at your fingertipz',
-        link: 'https://github.com/paulirish/pwmetrics',
-        title: 'PWMetrics',
-        type: [cli, ci]
-      },
-      {
-        description: 'Progressive web metrics at your fingertipz',
-        link: 'https://github.com/paulirish/pwmetrics',
-        title: 'PWMetrics',
-        type: [cli, ci]
-      },
-      {
         description: 'Google PageSpeed Reports sent directly to your inbox every week',
         link: 'https://pagespeedreports.proteusthemes.com/',
         title: 'PageSpeed Reports',
