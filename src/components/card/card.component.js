@@ -54,10 +54,12 @@ const ICON_VIEW_BOX = {
   dependency: '0 0 1000 900'
 };
 
-const getIcons = ({ type, path, theme, fullCard }) =>
-  type.map(({ key, path, title }) => (
-    <Tooltip key={key} title={title}>
-      {createElement(
+const getIcons = ({ type, path, theme, fullCard, pointing }) =>
+  type.map(({ key, path, title }) =>
+    createElement(
+      Tooltip,
+      { key, title, pointing },
+      createElement(
         ICONS[path],
         {
           viewBox: ICON_VIEW_BOX[path],
@@ -65,9 +67,9 @@ const getIcons = ({ type, path, theme, fullCard }) =>
           color: theme
         },
         null
-      )}
-    </Tooltip>
-  ));
+      )
+    )
+  );
 
 const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
   <CardContainerDiv fullCard={fullCard}>
@@ -82,13 +84,23 @@ const CardComponent = ({ title, description, link, type, fullCard, theme }) => (
     {!fullCard && <ContentDiv large={fullCard}>{description}</ContentDiv>}
     {fullCard && (
       <InfoDivLarge>
-        {getIcons({ type, fullCard, theme: theme.tertiary })}
+        {getIcons({
+          type,
+          fullCard,
+          theme: theme.tertiary,
+          pointing: 'top left'
+        })}
       </InfoDivLarge>
     )}
     {!fullCard && (
       <InfoDiv>
         <InfoIconsDiv>
-          {getIcons({ type, fullCard, theme: theme.tertiary })}
+          {getIcons({
+            type,
+            fullCard,
+            theme: theme.tertiary,
+            pointing: 'top right'
+          })}
         </InfoIconsDiv>
         <LinkA href={link} target="_blank" rel="noopener">
           View
