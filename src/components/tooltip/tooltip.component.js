@@ -1,8 +1,9 @@
 import { h, Component } from "preact";
+import { withTheme } from "emotion-theming";
 
 import { TooltipWrapper, TooltipSpan } from "./tooltip.style";
 
-export class Tooltip extends Component {
+class TooltipComponent extends Component {
   state = {
     open: false
   };
@@ -26,3 +27,5 @@ export class Tooltip extends Component {
     );
   }
 }
+
+export const Tooltip = withTheme(TooltipComponent);

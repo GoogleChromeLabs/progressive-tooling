@@ -5,9 +5,9 @@ export const TooltipWrapper = styled('div')`
 `;
 
 export const TooltipSpan = styled('span')`
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ theme }) => `${theme.primary}80`};
   border-radius: 5px;
-  color: #fff;
+  color: ${({ theme }) => theme.primaryInverse};
   font-size: 12px;
   font-weight: bold;
   padding: 6px 12px;
