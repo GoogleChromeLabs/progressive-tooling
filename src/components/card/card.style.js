@@ -48,13 +48,13 @@ export const CardContainerDiv = styled('div')`
     margin: ${props => !props.fullCard && '0 10px'};
     height: ${props => !props.fullCard && '250px'};
     min-width: ${props =>
-      !props.fullCard
-        ? `calc(100vw - 7rem / ${cardsInViewportPhone})`
-        : '100%'};
+    !props.fullCard
+      ? `calc(100vw - 7rem / ${cardsInViewportPhone})`
+      : '100%'};
     width: ${props =>
-      !props.fullCard
-        ? `calc(100vw - 7rem / ${cardsInViewportPhone})`
-        : '100%'};
+    !props.fullCard
+      ? `calc(100vw - 7rem / ${cardsInViewportPhone})`
+      : '100%'};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,49 +64,49 @@ export const CardContainerDiv = styled('div')`
   ${forTabletPortraitUp} {
     margin-right: ${props => !props.fullCard && '20px'};
     min-width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 6rem - 35px) / ${cardsInViewportTablet})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 6rem - 35px) / ${cardsInViewportTablet})`
+      : '100%'};
     width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 6rem - 35px) / ${cardsInViewportTablet})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 6rem - 35px) / ${cardsInViewportTablet})`
+      : '100%'};
   }
 
   ${forSmallDesktopUp} {
     margin-right: ${props => !props.fullCard && '30px'};
     min-width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 6rem - 80px) / ${cardsInViewportSmallDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 6rem - 80px) / ${cardsInViewportSmallDesktop})`
+      : '100%'};
     width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 6rem - 80px) / ${cardsInViewportSmallDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 6rem - 80px) / ${cardsInViewportSmallDesktop})`
+      : '100%'};
   }
 
   ${forDesktopUp} {
     margin-right: ${props => !props.fullCard && '30px'};
     min-width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 12rem - 110px) / ${cardsInViewportDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 12rem - 110px) / ${cardsInViewportDesktop})`
+      : '100%'};
     width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 12rem - 110px) / ${cardsInViewportDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 12rem - 110px) / ${cardsInViewportDesktop})`
+      : '100%'};
   }
 
   ${forLargeDesktopUp} {
     margin-right: ${props => !props.fullCard && '30px'};
     min-width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 12rem - 160px) / ${cardsInViewportDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 12rem - 160px) / ${cardsInViewportDesktop})`
+      : '100%'};
     width: ${props =>
-      !props.fullCard
-        ? `calc((100vw - 12rem - 160px) / ${cardsInViewportDesktop})`
-        : '100%'};
+    !props.fullCard
+      ? `calc((100vw - 12rem - 160px) / ${cardsInViewportDesktop})`
+      : '100%'};
   }
 `;
 
@@ -163,17 +163,19 @@ export const InfoDiv = styled('div')`
   }
 `;
 
-export const InfoIconsDiv = styled('div')`
+export const IconsDiv = styled('div')`
   display: flex;
   align-items: center;
+`;
 
-  svg {
+export const InfoIconsDiv = styled(IconsDiv)`
+  div {
     margin-right: 10px;
   }
 `;
 
-export const InfoDivLarge = styled('div')`
-  svg {
+export const InfoDivLarge = styled(IconsDiv)`
+  div {
     margin-left: 15px;
   }
 `;

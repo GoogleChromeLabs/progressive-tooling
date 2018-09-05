@@ -14,47 +14,56 @@
  * the License.
  */
 
-import { h } from 'preact';
+import { h, createElement } from 'preact';
 import { withTheme } from 'emotion-theming';
 
 import { ContainerDiv, ToolTypeDiv, ToolTypeP } from './sub-hero.style';
 import {
   CheckSvg,
   CodeSvg,
+  FrameworkSvg,
   LaptopSvg,
   PackageSvg,
   TerminalSvg
 } from 'src/icons';
+import TOOL_TYPES from 'src/tools/types';
+
+const ICONS = {
+  api: CodeSvg,
+  CI: CheckSvg,
+  CLI: TerminalSvg,
+  dependency: PackageSvg,
+  external: LaptopSvg,
+  framework: FrameworkSvg
+};
+
+const ICON_VIEW_BOX = {
+  CLI: '0 0 14 16',
+  dependency: '0 0 1000 900'
+};
+
+const toolTypeIcon = ({ path, theme }) => {
+  const element = ICONS[path];
+  const props = {
+    viewBox: ICON_VIEW_BOX[path],
+    size: 80,
+    color: theme
+  };
+
+  return createElement(element, props, null);
+};
 
 const SubHeroComponent = ({
   theme,
   backgroundColor = theme.backgroundPrimary
 }) => (
   <ContainerDiv backgroundColor={backgroundColor}>
-    <ToolTypeDiv>
-      <PackageSvg size={80} viewBox="0 0 1000 900" color={theme.tertiary} />
-      <ToolTypeP>Package</ToolTypeP>
-    </ToolTypeDiv>
-    <ToolTypeDiv>
-      <TerminalSvg size={80} viewBox="0 0 14 16" color={theme.tertiary} />
-      <ToolTypeP>CLI</ToolTypeP>
-    </ToolTypeDiv>
-    <ToolTypeDiv>
-      <CheckSvg size={80} color={theme.tertiary} />
-      <ToolTypeP>CI</ToolTypeP>
-    </ToolTypeDiv>
-    <ToolTypeDiv>
-      <CodeSvg size={78} color={theme.tertiary} />
-      <ToolTypeP>
-        API
-        <br />
-        (Web/Server)
-      </ToolTypeP>
-    </ToolTypeDiv>
-    <ToolTypeDiv>
-      <LaptopSvg size={80} color={theme.tertiary} />
-      <ToolTypeP>Website/GUI</ToolTypeP>
-    </ToolTypeDiv>
+    {Object.values(TOOL_TYPES).map(({ key, path, title }) => (
+      <ToolTypeDiv key={key}>
+        {toolTypeIcon({ theme: theme.tertiary, path })}
+        <ToolTypeP>{title}</ToolTypeP>
+      </ToolTypeDiv>
+    ))}
   </ContainerDiv>
 );
 
