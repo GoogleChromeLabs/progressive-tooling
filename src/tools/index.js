@@ -90,6 +90,13 @@ export default {
       },
       {
         description:
+          'A devtool for inspecting the performance of Vue Components',
+        link: 'https://github.com/vue-perf-devtool/vue-perf-devtool#vue-performance-devtool',
+        title: 'Vue Performance Devtool',
+        type: [external, framework]
+      },
+      {
+        description:
           'Monitor web performance and how real users experience your site',
         link: 'https://speedcurve.com/',
         title: 'Speedcurve',
