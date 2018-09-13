@@ -90,6 +90,13 @@ export default {
       },
       {
         description:
+          'A devtool for inspecting the performance of Vue Components',
+        link: 'https://github.com/vue-perf-devtool/vue-perf-devtool#vue-performance-devtool',
+        title: 'Vue Performance Devtool',
+        type: [external, framework]
+      },
+      {
+        description:
           'Monitor web performance and how real users experience your site',
         link: 'https://speedcurve.com/',
         title: 'Speedcurve',
@@ -294,6 +301,18 @@ export default {
       }
     ]
   },
+  'video-optimization': {
+    title: 'Video optimization',
+    subtitle: 'Optimize and compress videos',
+    tools: [
+      {
+        description: 'Convert videos from live sources and resize them on the fly',
+        link: 'https://www.ffmpeg.org/ffmpeg.html',
+        title: 'ffmpeg',
+        type: [cli]
+      }
+    ]
+  },
   'lazy-loading': {
     title: 'Lazy loading',
     subtitle:
@@ -454,6 +473,18 @@ export default {
           'Add server-side rendering capabilities to a web server using Headless Chrome',
         link: 'https://developers.google.com/web/tools/puppeteer/articles/ssr',
         title: 'Puppeteer',
+        type: [dep]
+      }
+    ]
+  },
+  'data-analytics': {
+    title: 'Data Analytics',
+    subtitle: 'Tools that use analytics or machine learning models to improve user experience',
+    tools: [
+      {
+        description: 'Libraries and tools for enabling data-driven user-experiences on the web',
+        link: 'https://github.com/guess-js/guess',
+        title: 'Guess.js',
         type: [dep]
       }
     ]
