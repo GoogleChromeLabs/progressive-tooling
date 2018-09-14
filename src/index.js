@@ -14,7 +14,8 @@
  * the License.
  */
 
-import { h, Component } from 'preact';
+import { Component } from 'preact';
+import { injectGlobal } from 'emotion';
 import { ThemeProvider } from 'emotion-theming';
 
 import {
@@ -27,6 +28,29 @@ import {
 } from 'src/components';
 import { colors } from 'src/core';
 import tools from 'src/tools';
+
+injectGlobal`
+  html,
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    font-family: avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    font-weight: 400;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #app {
+    width: 100%;
+  }
+`;
 
 const primaryTheme = {
   name: 'primary',

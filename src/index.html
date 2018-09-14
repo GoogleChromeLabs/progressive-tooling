@@ -53,28 +53,6 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
 
-	<style>
-		html,
-		body {
-			width: 100%;
-			padding: 0;
-			margin: 0;
-			background: #FFF;
-			font-family: avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-			font-weight: 400;
-			color: #444;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-		}
-
-		* {
-			box-sizing: border-box;
-		}
-
-		#app {
-			width: 100%;
-		}
-	</style>
 	<% for (var chunk of webpack.chunks) { %>
 		<% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
 			<% for (var file of chunk.files) { %>
