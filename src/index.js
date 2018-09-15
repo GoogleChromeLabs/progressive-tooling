@@ -32,6 +32,7 @@ import tools from 'src/tools';
 injectGlobal`
   html,
   body {
+    display: block;
     width: 100%;
     padding: 0;
     margin: 0;
