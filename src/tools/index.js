@@ -155,6 +155,12 @@ export default {
         link: 'https://pagespeedreports.proteusthemes.com/',
         title: 'PageSpeed Reports',
         type: [external]
+      },
+      {
+        description: 'A tool for speed and SEO optimization checks and guides',
+        link: 'https://varvy.com/',
+        title: 'Varvy SEO tool and optimization guide',
+        type: [external]
       }
     ]
   },
@@ -298,6 +304,13 @@ export default {
         link: 'https://trimage.org/',
         title: 'Trimage',
         type: [cli, external]
+      },
+      {
+        description:
+          'A free tool for optimizing JPEG and PNG files',
+        link: 'https://tinyjpg.com/',
+        title: 'TinyJPG',
+        type: [external, api]
       }
     ]
   },
