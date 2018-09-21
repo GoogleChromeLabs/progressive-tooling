@@ -72,13 +72,13 @@
 
 <body>
 	<%= htmlWebpackPlugin.options.ssr({
-			url: '/'
-		}) %>
-		<script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
-		<script>window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
+		url: '/'
+	}) %>
+	<script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
+	<script>window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
 
-		<script async src="https://www.google-analytics.com/analytics.js"></script>
-		<script async src="/assets/scripts/analytics.js"></script>
+	<script async src="https://www.google-analytics.com/analytics.js"></script>
+	<script async src="/assets/scripts/analytics.js"></script>
 </body>
 
 </html>

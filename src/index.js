@@ -14,9 +14,12 @@
  * the License.
  */
 
-import { Component } from 'preact';
-import { injectGlobal } from 'emotion';
+import { h, render, Component } from 'preact';
+import { renderToString } from 'preact-render-to-string';
+import { injectGlobal, hydrate } from 'emotion';
 import { ThemeProvider } from 'emotion-theming';
+import { extractCritical } from './extract-critical';
+import template from './template';
 
 import {
   Header,
@@ -79,7 +82,7 @@ const secondaryTheme = {
   logo: colors.purple
 };
 
-export default class App extends Component {
+class App extends Component {
   onListChange = () => {
     this.setState(
       {
@@ -153,3 +156,21 @@ export default class App extends Component {
     );
   }
 }
+
+const renderOnClient = () => {
+  if (window.__EMOTION_CRITICAL_CSS_IDS__) {
+    hydrate(window.__EMOTION_CRITICAL_CSS_IDS__);
+  }
+
+  render(<App />, document.getElementById('root') || document.body, document.getElementById('app'));
+};
+
+const renderOnServer = params => {
+  const url = params.url || '/';
+  const { html, ids, css } = extractCritical(renderToString(h(App, { url })));
+  return template(html, ids, css);
+};
+
+const renderingMethod = typeof window === 'undefined' ? renderOnServer : renderOnClient();
+
+export default renderingMethod;
