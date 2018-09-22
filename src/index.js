@@ -14,8 +14,12 @@
  * the License.
  */
 
-import { h, Component } from 'preact';
+import { h, render, Component } from 'preact';
+import { renderToString } from 'preact-render-to-string';
+import { injectGlobal, hydrate } from 'emotion';
 import { ThemeProvider } from 'emotion-theming';
+import { extractCritical } from './extract-critical';
+import template from './template';
 
 import {
   Header,
@@ -27,6 +31,30 @@ import {
 } from 'src/components';
 import { colors } from 'src/core';
 import tools from 'src/tools';
+
+injectGlobal`
+  html,
+  body {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    font-family: avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    font-weight: 400;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #app {
+    width: 100%;
+  }
+`;
 
 const primaryTheme = {
   name: 'primary',
@@ -54,7 +82,7 @@ const secondaryTheme = {
   logo: colors.purple
 };
 
-export default class App extends Component {
+class App extends Component {
   onListChange = () => {
     this.setState(
       {
@@ -128,3 +156,21 @@ export default class App extends Component {
     );
   }
 }
+
+const renderOnClient = () => {
+  if (window.__EMOTION_CRITICAL_CSS_IDS__) {
+    hydrate(window.__EMOTION_CRITICAL_CSS_IDS__);
+  }
+
+  render(<App />, document.getElementById('root') || document.body, document.getElementById('app'));
+};
+
+const renderOnServer = params => {
+  const url = params.url || '/';
+  const { html, ids, css } = extractCritical(renderToString(h(App, { url })));
+  return template(html, ids, css);
+};
+
+const renderingMethod = typeof window === 'undefined' ? renderOnServer : renderOnClient();
+
+export default renderingMethod;
