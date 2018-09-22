@@ -52,11 +52,6 @@
 	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon-120x120.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
-	<style>
-		body {
-			display: none;
-		}
-	</style>
 
 	<% for (var chunk of webpack.chunks) { %>
 		<% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
