@@ -332,6 +332,12 @@ export default {
       'Asynchronously load elements (DOM nodes, images, components or routes) when needed',
     tools: [
       {
+        description: 'Browser native loading attribute to lazy load offscreen images and iframes',
+        link: 'https://web.dev/native-lazy-loading',
+        title: 'Native lazy-loading',
+        type: []
+      },
+      {
         description:
           'Higher order component for loading components with dynamic imports',
         link: 'https://github.com/jamiebuilds/react-loadable',
