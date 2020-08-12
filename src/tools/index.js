@@ -104,6 +104,13 @@ export default {
       },
       {
         description:
+          'Simple web performance monitoring of real users on your site',
+        link: 'https://requestmetrics.com/',
+        title: 'Request Metrics',
+        type: [external]
+      },
+      {
+        description:
           'Service by Netlify that rates your site based on its initial global load times and its security settings',
         link: 'https://testmysite.io/',
         title: 'Testmysite.io',
