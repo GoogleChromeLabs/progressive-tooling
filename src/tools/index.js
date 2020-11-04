@@ -279,6 +279,12 @@ export default {
     subtitle: 'Optimize and compress images',
     tools: [
       {
+        description: 'A Github Action that automatically compresses JPEGs, PNGs and WebPs in Pull Requests',
+        link: 'https://github.com/calibreapp/image-actions/',
+        title: 'image-actions',
+        type: [ci, cli, external]
+      },
+      {
         description: 'Minify images seamlessly',
         link: 'https://github.com/imagemin/imagemin',
         title: 'ImageMin',
