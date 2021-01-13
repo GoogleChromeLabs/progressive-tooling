@@ -168,6 +168,13 @@ export default {
         link: 'https://varvy.com/',
         title: 'Varvy SEO tool and optimization guide',
         type: [external]
+      },
+      {
+        description:
+          'Monitor front-end performance and Lighthouse scores.',
+        link: 'https://www.debugbear.com',
+        title: 'DebugBear',
+        type: [external]
       }
     ]
   },
