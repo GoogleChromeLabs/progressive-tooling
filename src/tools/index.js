@@ -53,6 +53,13 @@ export default {
         link: 'https://github.com/liip/TheA11yMachine',
         title: 'TheA11yMachine',
         type: [cli]
+      },
+      {
+        description:
+          'An EmberJS addon to help identify accessibility violations during development',
+        link: 'https://github.com/coyote-labs/ember-accessibility/',
+        title: 'ember-accessibility',
+        type: [dep, framework]
       }
     ]
   },
